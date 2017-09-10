@@ -192,6 +192,7 @@ JsonArray JsonHelper::readJsonArray(const string &path)
     {
         size_t beginning = json_str2.find_first_of("[");
         int fixchar = json_str2[json_str2.size() - 2] == ']' ? 1 : 0;
+        // It is impossible to have any parsing error message printed out! see "err" in next line:
         return Json::parse(json_str2.substr(beginning, json_str2.size() - fixchar), err).array_items();
     }
     else
